@@ -14,14 +14,13 @@ class SLP(torch.nn.Module):
   def __init__(self ,input_layer ,output_layer, device = torch.device("cuda")):
     
     super(SLP, self).__init__()
-    self.input_layer = input_layer
-    self.output_layer = output_layer
+    self.input_layer = input_layer[0]
     self.device = device
     
     #NUMERO DE NEURONAS EN LA CAPA OCULTA
     self.hidden_layer = 40
     self.Z_in = torch.nn.Linear(self.input_layer, self.hidden_layer)    #TRANSFORMACION LINEAL Z = XW + B (Numero de entradas a cada neurona, Numero de parametros de bias asociados a la caps SIGUIENTE)
-    self.Z_out = torch.nn.Linear(self.hidden_layer, self.output_layer) 
+    self.Z_out = torch.nn.Linear(self.hidden_layer, output_layer) 
     
 
   def forward(self, _X):
