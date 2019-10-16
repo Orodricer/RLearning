@@ -14,7 +14,7 @@ class SLP(torch.nn.Module):
   def __init__(self ,input_layer ,output_layer, device = torch.device("cuda")):
     
     super(SLP, self).__init__()
-    self.input_layer = input_layer[0]
+    self.input_layer = input_layer
     self.output_layer = output_layer
     self.device = device
     
