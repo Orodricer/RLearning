@@ -15,7 +15,7 @@ class SLP(torch.nn.Module):
     
     super(SLP, self).__init__()
     self.input_layer = input_layer[0]
-    self.output_layer = output_layer[0]
+    self.output_layer = output_layer
     self.device = device
     
     #NUMERO DE NEURONAS EN LA CAPA OCULTA
